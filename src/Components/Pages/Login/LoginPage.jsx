@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
-import bgImage from '../../assets/image.png';
-import icon from '../../assets/logo.png';
-import { Label } from '../ui/label';
-import { Input } from '../ui/input';
+import bgImage from '../../../assets/image.png';
+import icon from '../../../assets/logo.png';
+import { Label } from '../../ui/label';
+import { Input } from '../../ui/input';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { Button } from '../ui/button';
+import { Button } from '../../ui/button';
 import { useDispatch, useSelector } from 'react-redux';
-import { postData, resetLoginState, clearErrorMessage } from '../Redux/apiSlice';
+import { postData, resetLoginState, clearErrorMessage } from '../../Redux/Slice/apiSlice';
 import { useNavigate } from 'react-router-dom';
 import { message } from 'antd';
 

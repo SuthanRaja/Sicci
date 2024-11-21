@@ -1,5 +1,5 @@
 import React from 'react'
-import Profile from '../../assets/person.png'
+import Profile from '../../../assets/person.png'
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import {
   DropdownMenu,

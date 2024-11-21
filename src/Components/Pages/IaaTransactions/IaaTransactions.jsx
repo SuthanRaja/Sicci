@@ -1,4 +1,4 @@
-import Navbar from '../Navbar/Navbar'
+import Navbar from '../../Navbar/Navbar'
 import { Slash } from "lucide-react"
 import {
   Breadcrumb,
@@ -7,11 +7,11 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
-import Header from './Header';
-import { Button } from '../ui/button';
+import Header from '../Header/Header';
+import { Button } from '../../ui/button';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCustomerData } from '../Redux/apiSlice';
+import { fetchCustomerData } from '../../Redux/Slice/apiSlice';
 import { FiPlus } from "react-icons/fi";
 import { GiBackwardTime } from "react-icons/gi";
 
