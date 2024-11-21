@@ -65,7 +65,7 @@ const HallBookingReport = () => {
 
             <div className='flex justify-between'>
               <h1 className='text-xl font-bold text-[#1C189A] mx-6'>Hall Booking</h1>
-              <DatePickerDemo/>
+              <DatePickerDemo />
               <Button variant="ghost">Clear</Button>
             </div>
             {errorMessage && (
@@ -75,54 +75,54 @@ const HallBookingReport = () => {
             {Array.isArray(hallReportsData) && hallReportsData.length > 0 ? (
               <div className='relative w-full overflow-auto m-4 '>
 
-              <Table>
-                <TableCaption className="text-[#1C189A]">A list of all Hall Bookings.</TableCaption>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Cause Title</TableHead>
-                    <TableHead>Customer Name</TableHead>
-                    <TableHead>Booking Party Name</TableHead>
-                    <TableHead>Arbitrator Name</TableHead>
-                    <TableHead>Hours</TableHead>
-                    <TableHead>Total Price</TableHead>
-                    <TableHead>Date</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead></TableHead>
-                  </TableRow>
-                </TableHeader>
-
-
-
-                <TableBody className="font-sans">
-                  {hallReportsData.map((hall) => (
-                    <TableRow key={hall._id}>
-                      <TableCell >{hall.causeTitle}</TableCell>
-                      <TableCell>{hall.customerName}</TableCell>
-                      <TableCell>{hall.bookingPartyName}</TableCell>
-                      <TableCell>{hall.arbitratorName}</TableCell>
-                      <TableCell>{hall.hours}</TableCell>
-                      <TableCell>{hall.totalPrice}</TableCell>
-                      <TableCell>
-  {new Date(hall.bookingDate).toLocaleDateString('en-US', {
-    month: 'numeric',
-    day: 'numeric',
-    year: 'numeric' ,
-    
-    
-  })}
-</TableCell>
-                      <TableCell>{hall.status}</TableCell>
-                      <TableCell className='flex flex-row space-x-5 justify-end font-normal '>
-                        <Button variant="ghost" >View</Button>
-                      </TableCell>                
+                <Table>
+                  <TableCaption className="text-[#1C189A]">A list of all Hall Bookings.</TableCaption>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Cause Title</TableHead>
+                      <TableHead>Customer Name</TableHead>
+                      <TableHead>Booking Party Name</TableHead>
+                      <TableHead>Arbitrator Name</TableHead>
+                      <TableHead>Hours</TableHead>
+                      <TableHead>Total Price</TableHead>
+                      <TableHead>Date</TableHead>
+                      <TableHead>Status</TableHead>
+                      <TableHead></TableHead>
                     </TableRow>
-                  ))}
-                </TableBody>
+                  </TableHeader>
 
-              </Table>
-            </div>   
+
+
+                  <TableBody className="font-sans">
+                    {hallReportsData.map((hall) => (
+                      <TableRow key={hall._id}>
+                        <TableCell >{hall.causeTitle}</TableCell>
+                        <TableCell>{hall.customerName}</TableCell>
+                        <TableCell>{hall.bookingPartyName}</TableCell>
+                        <TableCell>{hall.arbitratorName}</TableCell>
+                        <TableCell>{hall.hours}</TableCell>
+                        <TableCell>{hall.totalPrice}</TableCell>
+                        <TableCell>
+                          {new Date(hall.bookingDate).toLocaleDateString('en-US', {
+                            month: 'numeric',
+                            day: 'numeric',
+                            year: 'numeric',
+
+
+                          })}
+                        </TableCell>
+                        <TableCell>{hall.status}</TableCell>
+                        <TableCell className='flex flex-row space-x-5 justify-end font-normal '>
+                          <Button variant="ghost" >View</Button>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+
+                </Table>
+              </div>
             ) : (
-              <p>{hallReportsData ? "No iaa report data available." : "Loading..."}</p>
+              <p>{hallReportsData ? "No hall report data available." : "Loading..."}</p>
             )}
 
 

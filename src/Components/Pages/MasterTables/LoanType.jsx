@@ -71,35 +71,35 @@ const LoanType = () => {
             {Array.isArray(loanData) && loanData.length > 0 ? (
               <div className='relative w-full overflow-auto m-4 '>
 
-              <Table>
-                <TableCaption className="text-[#1C189A]">A list of all Loan Types.</TableCaption>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead >Loan Type Name</TableHead>
-                    <TableHead>Description</TableHead>
-                    <TableHead>Is Active</TableHead>
-                    <TableHead className="text-right">Action</TableHead>
-                  </TableRow>
-                </TableHeader>
-
-
-
-                <TableBody className="font-sans">
-                  {loanData.map((loan) => (
-                    <TableRow key={loan._id}>
-                      <TableCell >{loan.loanTypeName}</TableCell>
-                      <TableCell>{loan.description}</TableCell>
-                      <TableCell>{loan.isActive ? 'Yes' : 'No'}</TableCell>
-                      <TableCell className='flex flex-row space-x-5 justify-end font-normal '>
-                        <Button variant="ghost">Edit</Button>
-                        <Button variant="ghost" >Delete</Button>
-                      </TableCell>                
+                <Table>
+                  <TableCaption className="text-[#1C189A]">A list of all Loan Types.</TableCaption>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead >Loan Type Name</TableHead>
+                      <TableHead>Description</TableHead>
+                      <TableHead>Is Active</TableHead>
+                      <TableHead className="text-right">Action</TableHead>
                     </TableRow>
-                  ))}
-                </TableBody>
+                  </TableHeader>
 
-              </Table>
-            </div>   
+
+
+                  <TableBody className="font-sans">
+                    {loanData.map((loan) => (
+                      <TableRow key={loan._id}>
+                        <TableCell >{loan.loanTypeName}</TableCell>
+                        <TableCell>{loan.description}</TableCell>
+                        <TableCell>{loan.isActive ? 'Yes' : 'No'}</TableCell>
+                        <TableCell className='flex flex-row space-x-5 justify-end font-normal '>
+                          <Button variant="ghost">Edit</Button>
+                          <Button variant="ghost" >Delete</Button>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+
+                </Table>
+              </div>
             ) : (
               <p>{loanData ? "No loan type data available." : "Loading..."}</p>
             )}

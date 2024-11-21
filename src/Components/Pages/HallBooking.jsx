@@ -89,7 +89,7 @@ const HallBooking = () => {
 
                         <div className="flex justify-start gap-5 ml-2">
                           <Button variant="ghost" >
-                            <FiPlus /> 
+                            <FiPlus />
                           </Button>
                         </div>
                         <div className="flex justify-start gap-5 ml-2 hover:text-white">

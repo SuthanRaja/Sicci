@@ -21,7 +21,7 @@ const LoginPage = () => {
         messageApi.open({
             type: 'error',
             content: 'Invalid email or password',
-          
+
         });
         dispatch(clearErrorMessage());
     };
@@ -94,7 +94,7 @@ const LoginPage = () => {
                         </div>
                     </form>
                     <div className='flex '>
-                    {contextHolder}
+                        {contextHolder}
                     </div>
                 </div>
             </div>

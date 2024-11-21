@@ -71,35 +71,35 @@ const User = () => {
             {Array.isArray(userData) && userData.length > 0 ? (
               <div className='relative w-full overflow-auto m-4 '>
 
-              <Table>
-                <TableCaption className="text-[#1C189A]">A list of all users.</TableCaption>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead >Username</TableHead>
-                    <TableHead>Email</TableHead>
-                    <TableHead>User Role</TableHead>
-                    <TableHead className="text-right">Action</TableHead>
-                  </TableRow>
-                </TableHeader>
-
-
-
-                <TableBody className="font-sans">
-                  {userData.map((user) => (
-                    <TableRow key={user._id}>
-                      <TableCell >{user.username}</TableCell>
-                      <TableCell>{user.email}</TableCell>
-                      <TableCell>{user.userRole.roleName}</TableCell>
-                      <TableCell className='flex flex-row space-x-5 justify-end font-normal '>
-                        <Button variant="ghost">Edit</Button>
-                        <Button variant="ghost" >Delete</Button>
-                      </TableCell>                
+                <Table>
+                  <TableCaption className="text-[#1C189A]">A list of all users.</TableCaption>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead >Username</TableHead>
+                      <TableHead>Email</TableHead>
+                      <TableHead>User Role</TableHead>
+                      <TableHead className="text-right">Action</TableHead>
                     </TableRow>
-                  ))}
-                </TableBody>
+                  </TableHeader>
 
-              </Table>
-            </div>   
+
+
+                  <TableBody className="font-sans">
+                    {userData.map((user) => (
+                      <TableRow key={user._id}>
+                        <TableCell >{user.username}</TableCell>
+                        <TableCell>{user.email}</TableCell>
+                        <TableCell>{user.userRole.roleName}</TableCell>
+                        <TableCell className='flex flex-row space-x-5 justify-end font-normal '>
+                          <Button variant="ghost">Edit</Button>
+                          <Button variant="ghost" >Delete</Button>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+
+                </Table>
+              </div>
             ) : (
               <p>{userData ? "No user data available." : "Loading..."}</p>
             )}

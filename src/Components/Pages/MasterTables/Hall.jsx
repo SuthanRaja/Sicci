@@ -71,39 +71,39 @@ const Hall = () => {
             {Array.isArray(hallData) && hallData.length > 0 ? (
               <div className='relative w-full overflow-auto m-4 '>
 
-              <Table>
-                <TableCaption className="text-[#1C189A]">A list of all Halls.</TableCaption>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Hall Name</TableHead>
-                    <TableHead>Description</TableHead>
-                    <TableHead>One Hour</TableHead>
-                    <TableHead>Half Day</TableHead>
-                    <TableHead>Full Day</TableHead>
-                    <TableHead className="text-right">Action</TableHead>
-                  </TableRow>
-                </TableHeader>
-
-
-
-                <TableBody className="font-sans">
-                  {hallData.map((hall) => (
-                    <TableRow key={hall._id}>
-                      <TableCell >{hall.roomName}</TableCell>
-                      <TableCell>{hall.description}</TableCell>
-                      <TableCell>{hall.oneHour}</TableCell>
-                      <TableCell>{hall.halfDay}</TableCell>
-                      <TableCell>{hall.fullDay}</TableCell>
-                      <TableCell className='flex flex-row space-x-5 justify-end font-normal '>
-                        <Button variant="ghost">Edit</Button>
-                        <Button variant="ghost" >Delete</Button>
-                      </TableCell>                
+                <Table>
+                  <TableCaption className="text-[#1C189A]">A list of all Halls.</TableCaption>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Hall Name</TableHead>
+                      <TableHead>Description</TableHead>
+                      <TableHead>One Hour</TableHead>
+                      <TableHead>Half Day</TableHead>
+                      <TableHead>Full Day</TableHead>
+                      <TableHead className="text-right">Action</TableHead>
                     </TableRow>
-                  ))}
-                </TableBody>
+                  </TableHeader>
 
-              </Table>
-            </div>   
+
+
+                  <TableBody className="font-sans">
+                    {hallData.map((hall) => (
+                      <TableRow key={hall._id}>
+                        <TableCell >{hall.roomName}</TableCell>
+                        <TableCell>{hall.description}</TableCell>
+                        <TableCell>{hall.oneHour}</TableCell>
+                        <TableCell>{hall.halfDay}</TableCell>
+                        <TableCell>{hall.fullDay}</TableCell>
+                        <TableCell className='flex flex-row space-x-5 justify-end font-normal '>
+                          <Button variant="ghost">Edit</Button>
+                          <Button variant="ghost" >Delete</Button>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+
+                </Table>
+              </div>
             ) : (
               <p>{hallData ? "No hall data available." : "Loading..."}</p>
             )}

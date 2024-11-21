@@ -32,7 +32,7 @@ export const fetchCustomerData = createAsyncThunk(
       const accessToken = localStorage.getItem('accessToken');
 
       if (!accessToken) {
-        console.error('Access token not found in local storage');   
+        console.error('Access token not found in local storage');
 
         throw new Error('Access token not found');
       }
@@ -237,10 +237,10 @@ const apiSlice = createSlice({
     customerData: [],
     hallData: [],
     userData: [],
-    roleData:[],
-    arbitratorData:[],
-    iaaReportsData:[],
-    hallReportsData:[],
+    roleData: [],
+    arbitratorData: [],
+    iaaReportsData: [],
+    hallReportsData: [],
   },
   reducers: {
     resetLoginState: (state) => {

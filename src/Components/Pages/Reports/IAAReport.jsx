@@ -71,47 +71,47 @@ const IAAReport = () => {
             {Array.isArray(iaaReportsData) && iaaReportsData.length > 0 ? (
               <div className='relative w-full overflow-auto m-4 '>
 
-              <Table>
-                <TableCaption className="text-[#1C189A]">A list of all IAA Transactions.</TableCaption>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Batch No.</TableHead>
-                    <TableHead>Customer</TableHead>
-                    <TableHead>Loan Type</TableHead>
-                    <TableHead>Date</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead>Payment</TableHead>
-                    <TableHead></TableHead>
-                  </TableRow>
-                </TableHeader>
-
-
-
-                <TableBody className="font-sans">
-                  {iaaReportsData.map((iaa) => (
-                    <TableRow key={iaa._id}>
-                      <TableCell >{iaa.batchNumber}</TableCell>
-                      <TableCell>{iaa.customer?.customerName}</TableCell>
-                      <TableCell>{iaa.loanType.loanTypeName}</TableCell>
-                      <TableCell>
-  {new Date(iaa.date).toLocaleDateString('en-US', {
-    weekday: 'short',
-    year: 'numeric' ,
-    month: 'short',
-    day: 'numeric'
-  })}
-</TableCell>
-                      <TableCell>{iaa.status}</TableCell>
-                      <TableCell>{iaa.paymentStatus}</TableCell>
-                      <TableCell className='flex flex-row space-x-5 justify-end font-normal '>
-                        <Button variant="ghost" >View</Button>
-                      </TableCell>                
+                <Table>
+                  <TableCaption className="text-[#1C189A]">A list of all IAA Transactions.</TableCaption>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Batch No.</TableHead>
+                      <TableHead>Customer</TableHead>
+                      <TableHead>Loan Type</TableHead>
+                      <TableHead>Date</TableHead>
+                      <TableHead>Status</TableHead>
+                      <TableHead>Payment</TableHead>
+                      <TableHead></TableHead>
                     </TableRow>
-                  ))}
-                </TableBody>
+                  </TableHeader>
 
-              </Table>
-            </div>   
+
+
+                  <TableBody className="font-sans">
+                    {iaaReportsData.map((iaa) => (
+                      <TableRow key={iaa._id}>
+                        <TableCell >{iaa.batchNumber}</TableCell>
+                        <TableCell>{iaa.customer?.customerName}</TableCell>
+                        <TableCell>{iaa.loanType.loanTypeName}</TableCell>
+                        <TableCell>
+                          {new Date(iaa.date).toLocaleDateString('en-US', {
+                            weekday: 'short',
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric'
+                          })}
+                        </TableCell>
+                        <TableCell>{iaa.status}</TableCell>
+                        <TableCell>{iaa.paymentStatus}</TableCell>
+                        <TableCell className='flex flex-row space-x-5 justify-end font-normal '>
+                          <Button variant="ghost" >View</Button>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+
+                </Table>
+              </div>
             ) : (
               <p>{iaaReportsData ? "No iaa report data available." : "Loading..."}</p>
             )}

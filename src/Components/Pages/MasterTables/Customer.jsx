@@ -71,35 +71,35 @@ const Customer = () => {
             {Array.isArray(customerData) && customerData.length > 0 ? (
               <div className='relative w-full overflow-auto m-4 '>
 
-              <Table>
-                <TableCaption className="text-[#1C189A]">A list of all Customers.</TableCaption>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Customer Name</TableHead>
-                    <TableHead>Loan Type</TableHead>
-                    <TableHead>Phone Number</TableHead>
-                    <TableHead className="text-right">Action</TableHead>
-                  </TableRow>
-                </TableHeader>
-
-
-
-                <TableBody className="font-sans">
-                  {customerData.map((customer) => (
-                    <TableRow key={customer._id}>
-                      <TableCell >{customer.customerName}</TableCell>
-                      <TableCell>{customer.loanType.length > 0 ? customer.loanType[0].loanTypeName : "No Loan Type"}</TableCell>
-                      <TableCell>{customer.mobileNumber}</TableCell>
-                      <TableCell className='flex flex-row space-x-5 justify-end font-normal '>
-                        <Button variant="ghost">Edit</Button>
-                        <Button variant="ghost" >Delete</Button>
-                      </TableCell>                
+                <Table>
+                  <TableCaption className="text-[#1C189A]">A list of all Customers.</TableCaption>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Customer Name</TableHead>
+                      <TableHead>Loan Type</TableHead>
+                      <TableHead>Phone Number</TableHead>
+                      <TableHead className="text-right">Action</TableHead>
                     </TableRow>
-                  ))}
-                </TableBody>
+                  </TableHeader>
 
-              </Table>
-            </div>   
+
+
+                  <TableBody className="font-sans">
+                    {customerData.map((customer) => (
+                      <TableRow key={customer._id}>
+                        <TableCell >{customer.customerName}</TableCell>
+                        <TableCell>{customer.loanType.length > 0 ? customer.loanType[0].loanTypeName : "No Loan Type"}</TableCell>
+                        <TableCell>{customer.mobileNumber}</TableCell>
+                        <TableCell className='flex flex-row space-x-5 justify-end font-normal '>
+                          <Button variant="ghost">Edit</Button>
+                          <Button variant="ghost" >Delete</Button>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+
+                </Table>
+              </div>
             ) : (
               <p>{customerData ? "No customer data available." : "Loading..."}</p>
             )}
