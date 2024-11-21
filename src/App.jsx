@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LoginPage  from './Components/Pages/LoginPage';
+import LoginPage from './Components/Pages/LoginPage';
 import Home from './Components/Pages/Home';
 import HallBooking from './Components/Pages/HallBooking';
 import User from './Components/Pages/MasterTables/User';
@@ -21,9 +21,9 @@ const App = () => {
         <Route path="/" element={<LoginPage />} />
         <Route path="/home" element={<Home />} />
         <Route path="/hall-booking" element={<HallBooking />} />
-        <Route path="/user" element={<User/>} />
+        <Route path="/user" element={<User />} />
         <Route path="/role" element={<Role />} />
-        <Route path="/loan-type" element={<LoanType/>} />
+        <Route path="/loan-type" element={<LoanType />} />
         <Route path="/arbitrator" element={<Arbitrator />} />
         <Route path="/customer" element={<Customer />} />
         <Route path="/hall" element={<Hall />} />

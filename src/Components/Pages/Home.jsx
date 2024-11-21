@@ -64,7 +64,7 @@ const Home = () => {
 
                 <div className='grid grid-cols-1 gap-y-10 gap-x-5 md:grid-cols-2 '>
                   {customerData.map((customer) => (
-                    <div className='flex flex-col items-center justify-between p-4 bg-white rounded-lg shadow-2xl max-w-[30vw]'>
+                    <div className='flex flex-col items-center justify-between p-4 bg-white rounded-lg shadow-2xl max-w-[30vw]' key={customer._id}>
 
                       <div>
                         <div className='flex items-center justify-center h-[50px]'>

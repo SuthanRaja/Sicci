@@ -7,8 +7,10 @@ const Customer_api = 'http://13.233.48.88:8080/api/v1/get/customers';
 const HallInfo_api = 'http://13.233.48.88:8080/api/v1/get/hall-rooms';
 const Users_api = 'http://13.233.48.88:8080/api/v1/get/users';
 const Roles_api = "http://13.233.48.88:8080/api/v1/get/roles";
-const LoanTypes_api = "http://13.233.48.88:8080/api/v1/get/loan-types"
-const Arbitrators_api = "http://13.233.48.88:8080/api/v1/get/arbitrators"
+const LoanTypes_api = "http://13.233.48.88:8080/api/v1/get/loan-types";
+const Arbitrators_api = "http://13.233.48.88:8080/api/v1/get/arbitrators";
+const IAATransactions_api = "http://13.233.48.88:8080/api/v1/get/iaa-transactions";
+const HallBookingReports_api = "http://13.233.48.88:8080/api/v1/get/hall-booking"
 
 export const postData = createAsyncThunk('data/loginData', async (post, { rejectWithValue }) => {
   try {
@@ -35,7 +37,6 @@ export const fetchCustomerData = createAsyncThunk(
         throw new Error('Access token not found');
       }
 
-      console.log('Access token:', accessToken);
 
       const response = await axios.get(Customer_api, {
         headers: {
@@ -176,6 +177,56 @@ export const fetchArbitratorData = createAsyncThunk(
   }
 );
 
+export const fetchIaaTransactionsData = createAsyncThunk(
+  'data/fetchIaaTransactionsData',
+  async (_, { rejectWithValue }) => {
+    try {
+      const accessToken = localStorage.getItem('accessToken');
+
+      if (!accessToken) {
+        console.error('Access token not found in local storage');
+        throw new Error('Access token not found');
+      }
+
+      const response = await axios.get(IAATransactions_api, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+
+      return response.data.data.iaaTransactions;
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+      return rejectWithValue(error.response.data.message);
+    }
+  }
+);
+
+export const fetchHallBookingReportsData = createAsyncThunk(
+  'data/fetchHallBookingReportsData',
+  async (_, { rejectWithValue }) => {
+    try {
+      const accessToken = localStorage.getItem('accessToken');
+
+      if (!accessToken) {
+        console.error('Access token not found in local storage');
+        throw new Error('Access token not found');
+      }
+
+      const response = await axios.get(HallBookingReports_api, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+
+      return response.data.data.hallBooking;
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+      return rejectWithValue(error.response.data.message);
+    }
+  }
+);
+
 const apiSlice = createSlice({
   name: 'api',
   initialState: {
@@ -188,6 +239,8 @@ const apiSlice = createSlice({
     userData: [],
     roleData:[],
     arbitratorData:[],
+    iaaReportsData:[],
+    hallReportsData:[],
   },
   reducers: {
     resetLoginState: (state) => {
@@ -269,6 +322,22 @@ const apiSlice = createSlice({
         state.errorMessage = null;
       })
       .addCase(fetchArbitratorData.rejected, (state, action) => {
+        state.errorMessage = action.payload;
+      })
+
+      .addCase(fetchIaaTransactionsData.fulfilled, (state, action) => {
+        state.iaaReportsData = action.payload;
+        state.errorMessage = null;
+      })
+      .addCase(fetchIaaTransactionsData.rejected, (state, action) => {
+        state.errorMessage = action.payload;
+      })
+
+      .addCase(fetchHallBookingReportsData.fulfilled, (state, action) => {
+        state.hallReportsData = action.payload;
+        state.errorMessage = null;
+      })
+      .addCase(fetchHallBookingReportsData.rejected, (state, action) => {
         state.errorMessage = action.payload;
       })
 

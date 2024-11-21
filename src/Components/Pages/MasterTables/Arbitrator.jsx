@@ -71,35 +71,35 @@ const Arbitrator = () => {
             {Array.isArray(arbitratorData) && arbitratorData.length > 0 ? (
               <div className='relative w-full overflow-auto m-4 '>
 
-              <Table>
-                <TableCaption className="text-[#1C189A]">A list of all Arbitrators.</TableCaption>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Arbitrator Name</TableHead>
-                    <TableHead>Email</TableHead>
-                    <TableHead>Loan Type</TableHead>
-                    <TableHead className="text-right">Action</TableHead>
-                  </TableRow>
-                </TableHeader>
-
-
-
-                <TableBody className="font-sans">
-                  {arbitratorData.map((arbitrators) => (
-                    <TableRow key={arbitrators._id}>
-                      <TableCell >{arbitrators.arbitratorName}</TableCell>
-                      <TableCell>{arbitrators.email}</TableCell>
-                      <TableCell>{arbitrators.loanTypeName || "N/A"}</TableCell>
-                      <TableCell className='flex flex-row space-x-5 justify-end font-normal '>
-                        <Button variant="ghost">Edit</Button>
-                        <Button variant="ghost" >Delete</Button>
-                      </TableCell>                
+                <Table>
+                  <TableCaption className="text-[#1C189A]">A list of all Arbitrators.</TableCaption>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Arbitrator Name</TableHead>
+                      <TableHead>Email</TableHead>
+                      <TableHead>Loan Type</TableHead>
+                      <TableHead className="text-right">Action</TableHead>
                     </TableRow>
-                  ))}
-                </TableBody>
+                  </TableHeader>
 
-              </Table>
-            </div>   
+
+
+                  <TableBody className="font-sans">
+                    {arbitratorData.map((arbitrators) => (
+                      <TableRow key={arbitrators._id}>
+                        <TableCell >{arbitrators.arbitratorName}</TableCell>
+                        <TableCell>{arbitrators.email}</TableCell>
+                        <TableCell>{arbitrators.loanType.length > 0 ? arbitrators.loanType[0].loanTypeName : ""}</TableCell>
+                        <TableCell className='flex flex-row space-x-5 justify-end font-normal '>
+                          <Button variant="ghost">Edit</Button>
+                          <Button variant="ghost" >Delete</Button>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+
+                </Table>
+              </div>
             ) : (
               <p>{arbitratorData && arbitratorData.length === 0 ? "No arbitrator data available." : "Loading..."}</p>
             )}
