@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginPage from './Components/Pages/LoginPage';
-import Home from './Components/Pages/Home';
+import Home from './Components/Pages/IaaTransactions';
 import HallBooking from './Components/Pages/HallBooking';
 import User from './Components/Pages/MasterTables/User';
 import Role from './Components/Pages/MasterTables/Role';
