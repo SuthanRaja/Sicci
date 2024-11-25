@@ -49,13 +49,13 @@ const HallBookingReport = () => {
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem>
-                  <BreadcrumbLink href="/">Reports</BreadcrumbLink>
+                  <BreadcrumbLink href="/home">Reports</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator>
                   <Slash />
                 </BreadcrumbSeparator>
                 <BreadcrumbItem>
-                  <BreadcrumbLink href="/hall-booking">Hall Booking</BreadcrumbLink>
+                  <BreadcrumbLink href="/hall-report">Hall Booking</BreadcrumbLink>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>

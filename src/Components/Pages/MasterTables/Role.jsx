@@ -46,13 +46,13 @@ const Role = () => {
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem>
-                  <BreadcrumbLink href="/">Master Table</BreadcrumbLink>
+                  <BreadcrumbLink href="/home">Master Table</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator>
                   <Slash />
                 </BreadcrumbSeparator>
                 <BreadcrumbItem>
-                  <BreadcrumbLink href="/hall-booking">Role</BreadcrumbLink>
+                  <BreadcrumbLink href="/role">Role</BreadcrumbLink>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>

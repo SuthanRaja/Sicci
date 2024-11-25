@@ -46,13 +46,13 @@ const IAAReport = () => {
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem>
-                  <BreadcrumbLink href="/">Reports</BreadcrumbLink>
+                  <BreadcrumbLink href="/home">Reports</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator>
                   <Slash />
                 </BreadcrumbSeparator>
                 <BreadcrumbItem>
-                  <BreadcrumbLink href="/hall-booking">IAA</BreadcrumbLink>
+                  <BreadcrumbLink href="/iaa-report">IAA</BreadcrumbLink>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>

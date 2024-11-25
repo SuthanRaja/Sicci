@@ -46,13 +46,13 @@ const Arbitrator = () => {
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem>
-                  <BreadcrumbLink href="/">Master Table</BreadcrumbLink>
+                  <BreadcrumbLink href="/home">Master Table</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator>
                   <Slash />
                 </BreadcrumbSeparator>
                 <BreadcrumbItem>
-                  <BreadcrumbLink href="/hall-booking">Arbitrator</BreadcrumbLink>
+                  <BreadcrumbLink href="/arbitrator">Arbitrator</BreadcrumbLink>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
